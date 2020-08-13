@@ -1,0 +1,34 @@
+/* COMMON STYLE */
+body {font: 1em Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";}
+* {margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box;}
+*::before, *::after {-webkit-box-sizing: border-box; box-sizing: border-box;}
+
+/* STYLE FOR HEADING FOR HEADER AND FOOTER */
+h1.head-main {text-align: center; font-size: 1em; margin: 1em 0;}
+h1.foot-btm {text-align: center; font-size: 1em; margin: 1em 0;}
+
+/* CONTAINER STYLE */
+.container {width: 960px; margin: auto;}
+.flex-container {border-top: 2px solid #bfbfbf; display: flex; align-items: stretch; height: auto;}
+.flex-container > div.col-10, .flex-container > div.col-2 {background-color: #efefef; width: 100px; text-align: center; line-height: 75px; font-size: 30px;}
+.flex-container > div.col-10 {flex-grow: 10;}
+.flex-container > div.col-2 {flex-grow: 2;}
+.flex-innerContainer {display: flex; flex-wrap: wrap;}
+.flex-innerContainer > div {color: #fff; width: 33.3%; text-align: center; line-height: 4em; font-size: 1.7em;}
+
+.flex-innerContainer > div:nth-child(1) {background-color: #6f98a8;}
+.flex-innerContainer > div:nth-child(2) {background-color: #2b8ead;}
+.flex-innerContainer > div:nth-child(3) {background-color: #2f454e;}
+.flex-innerContainer > div:nth-child(4) {background-color: #2b8ead;}
+.flex-innerContainer > div:nth-child(5) {background-color: #2f454e;}
+.flex-innerContainer > div:nth-child(6) {background-color: #bfbfbf;}
+.flex-innerContainer > div:nth-child(7) {background-color: #bfbfbf;}
+.flex-innerContainer > div:nth-child(8) {background-color: #6f98a8;}
+.flex-innerContainer > div:nth-child(9) {background-color: #2f454e;}
+
+
+
+.flex-innerRightContainer {padding: 1em;}
+.flex-innerRightContainer > div > button {background-color: #72c3dc; border-radius: 0.5em; border: 0; border-bottom:2px solid #3091b0; display: block; padding: 1em; cursor: pointer; margin-bottom: 1.5em;	width: 100%; color: #fff;}
+
+.flex-innerRightContainer > div > button:focus {outline: none; box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.5); border: 1px solid #3091b0; border-bottom: 2px solid #3091b0; font-weight: bold;}

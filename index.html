@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="ie=edge" http-equiv="x-ua-compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Shuffle and Sort</title>
+
+<!-- Common CSS file -->
+<link href="css/main.css" rel="stylesheet">
+
+<!-- Media Query CSS file for responsive layout -->
+<link href="css/mediaQuery.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- MAIN CONTAINER >>> START -->
+<div class="container">
+  <h1 class="head-main">Shuffle and Sort</h1>
+	
+  <!-- FLEX CONTAINER FOR COLUMNS DIV ELEMENT >>> START -->
+  <div class="flex-container">
+    <!-- LEFT COLUMN >>> START -->
+    <div class="col-10">
+      <div class="flex-innerContainer" id="displyBlocks">
+        <div id="displyBlocks-6">6</div>
+        <div id="displyBlocks-1">1</div>
+        <div id="displyBlocks-4">4</div>
+        <div id="displyBlocks-3">3</div>
+        <div id="displyBlocks-5">5</div>
+        <div id="displyBlocks-9">9</div>
+        <div id="displyBlocks-7">7</div>
+        <div id="displyBlocks-2">2</div>
+        <div id="displyBlocks-8">8</div>
+      </div>
+    </div>
+	<!-- LEFT COLUMN >>> END -->
+	  
+	<!-- RIGHT COLUMN >>> START -->
+    <div class="col-2">
+      <div class="flex-innerRightContainer">
+        <div>
+          <button onclick="doSuffle()">SHUFFLE</button>
+          <button onclick="doSort()">SHORT</button>
+        </div>
+      </div>
+    </div>
+	<!-- RIGHT COLUMN >>> END -->
+	  
+  </div>
+ <!-- FLEX CONTAINER FOR COLUMNS DIV ELEMENT >>> END --> 
+	
+ <h1 class="foot-btm">Shuffle and Sort by Sandeep B. Sahadeokar</h1>
+</div>
+<!-- MAIN CONTAINER >>> END -->
+
+<!-- SCRIPT FOR SORTING BLOCKS >>> START -->
+<script>
+function doSort() {
+    // container is <div id="displyBlocks">
+    var container = document.getElementById("displyBlocks");
+	
+    // all elements below <div id="displyBlocks">
+    var elements = container.childNodes;
+	
+    // temporary storage for elements which will be sorted
+    var sortMe = [];
+	
+    // iterate through all elements in <div id="list">
+    for (var i=0; i<elements.length; i++) {
+        if (!elements[i].id) {
+            continue;
+        }
+        var sortPart = elements[i].id.split("-");
+		
+        if (sortPart.length > 1) {
+            sortMe.push([ 1 * sortPart[1] , elements[i] ]);
+        }
+    }
+    // sort the array sortMe, elements with the lowest ID will be first
+    sortMe.sort(function(x, y) {
+        return x[0] - y[0];
+    });
+    for (var i=0; i<sortMe.length; i++) {
+        // remember that the second array element contains the element itself
+        container.appendChild(sortMe[i][1]);
+    }
+}
+
+</script> 
+<!-- SCRIPT FOR SORTING BLOCKS >>> END -->
+	
+<!-- SCRIPT FOR SUFFLING BLOCKS >>> START -->	
+<script>
+function doSuffle(){
+    var parent = document.getElementById("displyBlocks");
+    var frag = document.createDocumentFragment();
+    while (parent.children.length) {
+        frag.appendChild(parent.children[Math.floor(Math.random() * parent.children.length)]);
+    }
+    parent.appendChild(frag);
+}
+</script>
+<!-- SCRIPT FOR SUFFLING BLOCKS >>> END -->
+</body>
+</html>
